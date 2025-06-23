@@ -1,0 +1,56 @@
+.product {
+    margin-top: 185px;
+}
+
+.product-title {
+    color: #1E1E1E;
+
+    /* H1/Raleway 76 */
+    font-family: 'Raleway';
+    font-size: 76px;
+    font-weight: 800;
+    line-height: 1.3; /* 98.8px */
+}
+
+.product-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.product-inner-subtitle {
+    color: #1E1E1E;
+    /* H2/Lato SemiBold */
+    font-family: 'Lato';
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3; /* 46.8px */
+    max-width: 678px;
+    width: 100%;
+}
+
+.product-inner-content {
+    max-width: 678px;
+    width: 100%;
+    display: flex;
+}
+
+.product-inner-content-text {
+    max-width: 324px;
+    width: 100%;
+    margin-right: 30px;
+    padding-top: 24px;
+
+    color: #1E1E1E;
+
+    /* Body/Regular */
+    font-family: 'Lato';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6; /* 28.8px */
+}
+
+.product-inner-content-img {
+    margin-top: -50px;
+}
