@@ -2,4 +2,8 @@
     max-width: 1440px;
     padding: 0px 27px;
     margin: 0 auto;
+    @media screen and (max-width: 480px) {
+        max-width: 390px;
+        padding: 0px 16px;
+    }
 }

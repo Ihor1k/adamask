@@ -1,27 +1,36 @@
 .trade {
     margin-top: 160px;
+    @media screen and (max-width: 480px) {
+        margin-top: 80px;      
+    }
 }
 
 .trade-title {
     color: #1E1E1E;
     max-width: 1133px;
     width: 100%;
+    position: sticky;
+    top: 20px;
 
     /* H1/Raleway 76 */
     font-family: 'Raleway';
     font-size: 76px;
     font-weight: 800;
     line-height: 1.3; /* 98.8px */
+    @media screen and (max-width: 480px) {
+        font-size: 24px;      
+    }
 }
 
 .trade-content {
     width: 100%;
     display: flex;
     justify-content: end;
+    position: sticky;
+    top: 150px;
 }
 
 .trade-text {
-    position: sticky;
 
     color: #1E1E1E;
     margin: 80px 0px;
@@ -33,33 +42,49 @@
     font-size: 36px;
     font-weight: 600;
     line-height: 1.3; /* 46.8px */
+    @media screen and (max-width: 480px) {
+        font-size: 14px;
+        font-weight: 800;    
+        margin: 40px 0;  
+    }
 }
 
 .trade-list {
-    margin-left: 230px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-    width: 30%;
+    position: relative;
+    margin-left: 100px;
+    gap: 40px;
+    @media screen and (max-width: 480px) {
+        margin-left: 0;
+        width: 100%;      
+    }
 }
 
 .trade-item {
-    position: relative;
+    position: sticky;
+    top: 250px; /* точка "залипання" */
+    width: 33%;
     padding: 58px 30px;
-
+  
     border-radius: 24px;
     border: 2px solid #121CD6;
     background: #F7F3F0;
-
-    opacity: 0;
-    transform: translateY(100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    @media screen and (max-width: 480px) {
+        width: 100%;         
+    }
 }
 
-.trade-item.trade-show {
-    opacity: 1;
-    transition: all 900ms;
-    transform: translateY(0%);
-}
+.trade-item:nth-child(1) { z-index: 1; margin-bottom: 40px;}
+.trade-item:nth-child(2) { z-index: 2; margin-bottom: 40px;}
+.trade-item:nth-child(3) { z-index: 3; }
+
+// .trade-item.trade-show {
+//     opacity: 1;
+//     transition: all 900ms;
+//     transform: translateY(0%);
+// }
 
 .trade-item-title {
     position: absolute;
@@ -84,6 +109,13 @@
     border-radius: 24px;
     border: 2px solid #121CD6;
     background: linear-gradient(0deg, #121CD6 0%, #121CD6 100%), #F7F3F0;
+    @media screen and (max-width: 480px) {
+        font-size: 14px;
+        font-weight: 800;    
+        padding: 6px 20px 6px 30px;  
+        top: -13px;
+        border: 0px;
+    }
 }
 
 .trade-item-text {
@@ -94,6 +126,20 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 1.6; /* 28.8px */
+    @media screen and (max-width: 480px) {
+        font-size: 14px;
+        font-weight: 500;      
+    }
 }
 
 
+.trade-title,
+.trade-text {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.trade-hidden {
+  opacity: 0;
+  transform: translateY(-40px);
+  pointer-events: none;
+}
